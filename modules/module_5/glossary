@@ -1,0 +1,104 @@
+.length - returns the length of an array or string.
+    ex. A = 'this is a string'
+    
+    A.length will returns 16
+
+    to get the length of a integer convert to a string.
+    ex. A = 12
+
+    A.toString(); returns '12'
+        note: parseInt() converts a string to an integer parseInt(A) = 12.
+              X = 'is';  parseInt(X); returns NaN
+
+    to get the length of an object convert to an array.
+        
+        Object.keys(obj) returns the properties of an object in an array.
+            ex. const object1 = {
+                a: 'somestring',
+                b: 42,
+                c: false,
+              };
+              console.log(Object.keys(object1));
+              Expected output: Array ["a", "b", "c"]
+
+        Object.values() returns the property values of an object in an array.
+              ex.   console.log(Object.values(object1));
+                    Expected output: Array ["somestring", 42, false]
+              
+        Object.entries() returns the properties an values of an object in an array.
+              ex.   Object.entries(object1);
+                    Expected output: ["a","something"]
+                                     [ "b", 42 ]
+                                     [ "c", false ]
+
+.split(separator, limit) - uses a pattern to split up a string and returns it in an array.
+    ex. A = 'this is a string'
+    A.split(' '); will return ['this', 'is', 'a', 'string']
+    A.split(' ', 2); will return [ "this", "is" ]
+
+.indexOf()  returns the first index at which a given element can be found.
+              ex.   A = 'this is a string';
+                    A.indexOf(s) returns 3
+                    A.indexOf('string') returns 10
+
+                    A = ['this', 'is', 'a', 'string'];
+                    A.indexOf('this'); returns 0
+                    A.indexOf('s'); returns -1
+
+.push() A method that adds the specified elements to the end of an array and returns the new length of the array.
+              ex. A = [1, 2, 3, 4];
+              A.push(5); returns [1, 2, 3, 4, 5]
+
+.pop() A method that removes the last element from an array and returns that element. This method changes the length of the array.
+              ex. A = [1, 2, 3, 4, 5];
+              B = A.pop(5); returns 5 A = [1, 2, 3, 4] and B = 5
+
+.slice() A method that returns a shallow copy of a portion of an array into a new array object selected from start to end (end not included)
+              ex. A = [1, 2, 3, 4];
+              B = A.slice(0,2); B = [1, 2] A = [1, 2, 3, 4]
+              B = A.slice(1,3); B = [2, 3] A = [1, 2, 3, 4]
+              B = A.slice(-2);  B = [3, 4] A = [1, 2, 3, 4]
+        
+.splice() A method that changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.
+              ex. splice(start, deleteCount, item0, item1, /* … ,*/ itemN)
+              A = [1, 2, 4, 5];
+              A.splice(2,0,3); A = [1, 2, 3, 4, 5]
+
+              A = [1, 2, 3, 4, 5]
+              B = A.splice(2,1,4); B = [3] A = [1, 2, 4, 4, 5]
+
+Template literals are literals delimited with backtick (`) characters, allowing for multi-line strings,
+string interpolation with embedded expressions, and special constructs called tagged templates.`
+
+              ex. `string text`
+
+              `string text line 1
+               string text line 2`
+              
+              `string text ${expression} string text`
+              
+              tagFunction`string text ${expression} string text`
+
+Math.max()  returns the largest of the numbers given as input parameters, or -Infinity if there are no parameters.
+
+              ex.
+
+.filter()
+
+              ex.
+
+.map()
+              ex.
+
+.includes()
+
+              ex.
+
+.sort()
+
+              ex.
+
+.join()
+
+              ex.
+              

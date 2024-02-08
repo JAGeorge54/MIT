@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+function spliceElements(givenArray, element1, element2) {
+    let length = givenArray.length;
+  givenArray.splice(length, 1, element1, element2);
+}
+    
+    
+var arr = [1, 2, "MIT Certificate", 4, 5];
+console.log(spliceElements(arr, "JavaScript", 101)); // should return [1, 2, "MIT Certificate", 4, "JavaScript", 101]
+    </script>
+</body>
+</html>
