@@ -8,7 +8,7 @@ let options = {
     dotfiles: "ignore",
     redirect:false
 }
-
+// allows access to files in public folder
 app.use(express.static('public'))
 
 app.get("/",(req,res)=>{
