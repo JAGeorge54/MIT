@@ -1,0 +1,163 @@
+<script>
+//Declaration and assignment
+
+var myName = 'ant';
+console.log(myName); //ant
+var myName = 'jack';
+console.log(myName); //jack
+
+let theirName = 'john';
+// let theirName = 'mike'; //cannot redeclare let/const variable
+theirName = 'jill'; //can be reassigned
+console.log(theirName); //jill
+
+const anotherName = 'joe';
+// const anotherName = 'jay'; // cannot redeclare
+// anotherName = 'max'; // cannot be reassigned
+console.log(anotherName); // joe
+
+// Scope
+
+// var is function scoped
+
+/* 1. checks locally scopes variables first
+   2. checks parameter second
+   3. checks global variables third
+*/
+
+// globaly scoped variables
+// var b = 9;
+var c = 3;
+let d = 4;
+const e = 5;
+        // paramater
+function run(a) {
+    // function scoped/ local variables
+    console.log(a); // 1
+    var b = 2;
+    let f = 6;
+    const g = 7;
+    console.log(b); // 2
+    console.log(c); // 3
+    console.log(d); // 4
+    console.log(e); // 5
+    console.log(f); // 6
+    console.log(g); // 7
+}
+
+run(1);
+
+// console.log(a); // Reference Error
+// console.log(b); // Reference Error
+console.log(c);
+console.log(d);
+console.log(e);
+// console.log(f); // Reference Error
+// console.log(g); // Reference Error
+
+// let and const are block scoped
+
+let isTeaching = true;
+if (isTeaching) {
+    const hungry = true;
+    console.log(hungry); // true
+    var weird = 'this is weird';
+}
+
+console.log(weird); // this is weird
+// console.log(hungry); // Reference Error
+
+// Hoisting
+
+console.log(message); // undefined
+var message = 'Hello';
+console.log(message); // Hello
+
+// console.log(messageLet); //Reference Error
+let messageLet = 'Hello Let';
+console.log(messageLet); //Hello Let
+
+// console.log(messageConst); //Reference Error
+let messageConst = 'Hello Const';
+console.log(messageConst); //Hello Const
+
+
+// Arrow Functions
+
+// function add(x, y) {
+//     return x + y;
+// }
+
+const add = function (x, y) {
+    return x + y;
+}
+
+console.log(add(1, 2)); // 3
+console.log(add(2, 3)); // 5
+
+// convert to arrow function
+
+const anotherAdd = (x, y) => {
+    return x + y;
+}
+
+console.log(anotherAdd(1, 2)); // 3
+
+// Arrow function simpler syntax
+const finalAdd = (x, y) => x + y;
+
+console.log(finalAdd(1, 2)); // 3
+
+// Optional parentheses for one param
+
+const sayHello = name => 'Hello ' + name;
+
+console.log(sayHello('ant')); // Hello ant
+
+// No params requires parantheses
+const bye = () => console.log('bye');
+
+bye(); // bye
+
+// this is lexically scoped for arrow functions and dynamically scoped for regular functions
+const person = {
+    firstName: 'anthony',
+    sayHi: function() {
+        console.log('my name is ' + this.firstName);
+    }//,
+    // sayBye: () => {
+    //     console.log('bye, from ' = this.firstName);
+    // } // do not do this!
+}
+
+person.sayHi(); // my name is anthony
+// person.sayBye(); // bye, from undefined
+
+// Default Parameters
+const add1 = (x = 5, y = 1) => {
+    return x + y;
+}
+
+// function add1(x, y) {
+//     x = typeof x !== 'undefined' ? x : 5;
+//     y = typeof y !== 'undefined' ? y : 1;
+//     return x + y;
+// }
+
+console.log(add1()); // 6
+console.log(add1(1)); //2
+console.log(add1(undefined, 5)); // 10
+console.log(add1(1, 2)); // 3
+
+// TemplateLiterals
+function getAge(x) {
+    return 99 + x;
+}
+
+const myName1 = 'Antony';
+const sentence = 'This is a sentence about ' + myName1 + ' he is ' + getAge(1) + ' years old';
+console.log(sentence); // This is a sentence about Anthony he is 100 years old
+
+const literalSentence = `This is a sentence about ${myName1} he is ${getAge(1)} years old`;
+console.log(literalSentence); // This is a sentence about Anthony he is 100 years old
+</script>
