@@ -55,10 +55,6 @@ let books = [
     },
 ]
 
-app.get('/', (req, res)=> {
-  res.send('You need to authenticate in order to access functionality of this book server.');
-});
-
 app.get('/books', authenticateJWT, (req, res) => {
     res.json(books);
 });
