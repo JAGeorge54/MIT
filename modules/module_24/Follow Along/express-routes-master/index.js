@@ -9,12 +9,10 @@ let options = {
     redirect:false
 }
 
-app.use(express.static('public',options))
+app.use(express.static('public'))
 
 app.get("/",(req,res)=>{
-let html = "<img src='img/tenor.gif'/>"
-let key = "<a href='.secret/key.txt'>secret key </a>"
-res.send(html+key)
+    res.send('Hello World!')
 }
 )
 app.get("/restaurants", (req,res)=>{
