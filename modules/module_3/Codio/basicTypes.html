@@ -1,0 +1,41 @@
+<script>
+    var a = 'a';
+    let number = 123456789;
+    let boo = true;
+    let list = [];
+    console.log(a.length);
+    console.log(number.toString().length);
+    console.log(typeof a, typeof number, typeof boo, typeof list);
+
+    let myFirstName = 'Jesse';
+    let numberOfCities = 50;
+    let havingFun = true;
+    console.log('myFirstName: ', myFirstName);
+    console.log('numberOfCities: ', numberOfCities);
+    console.log('havingFun: ', havingFun);
+
+    const animal = 'dog';
+    function myPet() {
+        return animal;
+
+    }
+
+    function yourPet() {
+        let animal = 'cat';
+        return animal;
+    }
+    console.log('myPet result: ' + myPet());
+    console.log('yourPet result: ' + yourPet());
+
+
+function getPlayingStyle(){
+    let firstTeam = [3,3,1,3];
+    let secondTeam = firstTeam;
+    firstTeam[0] = 4;
+    firstTeam[1] = 1;
+    firstTeam[2] = 4;
+    firstTeam[3] = 1;
+    return secondTeam;
+    }
+    console.log("results = " + getPlayingStyle())
+</script>

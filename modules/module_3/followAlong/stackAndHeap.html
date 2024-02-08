@@ -1,0 +1,22 @@
+<script>
+    function main(){
+        console.log('main');
+        return blue();
+        console.log('main'); // this will produce an error unreachable code after return statement
+        
+    }
+
+    function blue(){
+        console.log('blue');
+        return red();
+        
+    }
+
+    function red(){
+        console.log('red');
+        return console.log('Hello World!');
+        
+    }
+
+    main();
+</script>
