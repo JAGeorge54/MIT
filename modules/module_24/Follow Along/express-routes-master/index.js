@@ -13,8 +13,9 @@ app.use(express.static('public'))
 
 app.get("/",(req,res)=>{
     // res.send('Hello World!')
-    let html = "<img src='img/john.png'/>";
-    res.send(html);
+    let html = "<img src='img/tenor.gif'/>";
+    let key = "<a href='.secret/key.txt'>secret key</a>"
+    res.send(html + key);
 }
 )
 app.get("/restaurants", (req,res)=>{
