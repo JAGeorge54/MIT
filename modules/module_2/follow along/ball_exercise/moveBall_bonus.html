@@ -1,0 +1,58 @@
+<div id="ball" style="
+  z-index:5;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:green"></div>
+
+<script>
+var velocityX = 1;
+var velocityY = 10;
+var positionX = 0;
+var positionY = 0;
+var ball = document.getElementById('ball');
+var reverseTop = false;
+var reverseLeft = false;
+
+// YOUR CODE 
+function moveBall(){
+    var minX = 0;
+    var maxX = 200;
+    var minY = 0;
+    var maxY = 200;
+
+    if(reverseLeft){
+        positionY = positionY - velocityY;
+        ball.style.top = positionY + 'px';
+    }else {
+        positionY = positionY + velocityY;
+        ball.style.top = positionY + 'px';
+    }
+
+    if(reverseTop){
+        positionX = positionX - velocityX;
+        ball.style.left = positionX + 'px';
+        }else {
+        positionX = positionX + velocityX;
+        ball.style.left = positionX + 'px';
+        }
+
+    if(positionY >= maxY || 
+       positionY === minY
+    ){
+        reverseTop = !reverseTop;
+    }
+
+    if(positionX >= maxX ||
+       positionX === minX
+    ){
+        reverseLeft = !reverseLeft;
+    }
+}
+
+setInterval(moveBall, 50);
+// ----------------
+</script>
