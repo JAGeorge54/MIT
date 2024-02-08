@@ -1,0 +1,1 @@
+initializeState(.|\n|\r)*this\.setState\({(.|\n|\r)*initialized:(.|\n|\r)*true,(.|\n|\r)*productName:(.|\n|\r)*["|']Rice Krispies["|'],(.|\n|\r)*productDescription:(.|\n|\r)*["|']a cereal made of popped rice["|'],(.|\n|\r)*productPrice:(.|\n|\r)*["|']\$3.00["|'](.|\n|\r)*}\)
