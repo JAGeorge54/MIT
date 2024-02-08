@@ -9,7 +9,7 @@ let options = {
     redirect:false
 }
 // allows access to files in public folder
-app.use(express.static('public'))
+app.use(express.static('public', options))
 
 app.get("/",(req,res)=>{
     // res.send('Hello World!')
