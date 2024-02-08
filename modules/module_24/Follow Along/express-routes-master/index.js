@@ -12,7 +12,9 @@ let options = {
 app.use(express.static('public'))
 
 app.get("/",(req,res)=>{
-    res.send('Hello World!')
+    // res.send('Hello World!')
+    let html = "<img src='img/john.png'/>";
+    res.send(html);
 }
 )
 app.get("/restaurants", (req,res)=>{
