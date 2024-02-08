@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "name": "Doris Gerhold",
+      "dob": "1953-7-23",
+      "email": "Doris_Gerhold@hotmail.com",
+      "username": "Doris_Gerhold",
+      "password": "aG_tLbpKkuWZz3n",
+      "phone": "319.443.2573 x65691",
+      "streetaddress": "15037 Candace Mission",
+      "citystatezip": "South Keanu, NV 80045",
+      "latitude": "-48.3626",
+      "longitude": "-21.3355"
+    },
+    {
+      "name": "Clemmie Leannon",
+      "dob": "1986-4-14",
+      "email": "Clemmie_Leannon82@yahoo.com",
+      "username": "Clemmie.Leannon",
+      "password": "W8o7HIxG3PBrwlK",
+      "phone": "1-568-557-8815 x33848",
+      "streetaddress": "657 DuBuque Roads",
+      "citystatezip": "Heatherport, UT 92409-0164",
+      "latitude": "14.3796",
+      "longitude": "166.2012"
+    },
+    {
+      "name": "Chauncey Wilkinson",
+      "dob": "1977-9-17",
+      "email": "Chauncey.Wilkinson30@hotmail.com",
+      "username": "Chauncey12",
+      "password": "l2eNn6vGYBNBQ3k",
+      "phone": "287-904-5366 x80157",
+      "streetaddress": "96763 Sanford Keys",
+      "citystatezip": "Reeseview, ND 27483",
+      "latitude": "-18.9835",
+      "longitude": "144.1654"
+    },
+    {
+      "name": "Mrs. Rosalee Kunze",
+      "dob": "1969-9-15",
+      "email": "Rosalee39@gmail.com",
+      "username": "Rosalee_Kunze70",
+      "password": "1JYlOOirn68KjQJ",
+      "phone": "1-934-252-9253 x61370",
+      "streetaddress": "374 Volkman Fork",
+      "citystatezip": "Lake Reta, SC 07679",
+      "latitude": "72.1407",
+      "longitude": "51.0561"
+    }
+  ]
+}
