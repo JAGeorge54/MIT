@@ -1,0 +1,50 @@
+<script>
+    const list = [5, 8, 9, 2, 7, 6, 3, 1, 4];
+
+function callback(list){
+    const newList = [];
+    for (i = 0; i < list.length; i++){
+        if (list[i] % 3 === 0){
+            newList.push(list[i]);
+        }
+    }
+    return newList;
+}
+
+function filter(list, callback){
+    return callback(list);
+}
+
+const filtered = filter(list, callback);
+
+console.log(filtered);
+
+const names = ['jamie', 'john', 'jesse', 'jim'];
+
+const myForEach = (arr, cb) => {
+    for (i = 0; i < 0; i++){
+        const element = arr[i];
+        cb(element);
+    }
+}
+myForEach(names, (name) => {
+    console.log(name);
+})
+
+let words = ['Loops', 'are', 'a', 'great', 'way', 'to', 'find', 'elements', 'in', 'an', 'array'];
+function createParagraph(words) {
+  let paragraph = '';
+
+  words.forEach((word) => {
+    paragraph += word + ' ';
+  });
+
+  return paragraph;
+}
+
+
+// Prints paragraph to console
+console.log(createParagraph(words));
+
+
+</script>

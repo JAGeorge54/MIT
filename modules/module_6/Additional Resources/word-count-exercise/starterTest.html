@@ -1,0 +1,20 @@
+<script>
+    const drink = '';
+    let cream = Boolean;
+    let sugar = Boolean;
+
+    const drinkOrder = (drink, cream, sugar, callback) => {
+        const finishedDrink = {
+            'Drink':`${drink}`,
+            'cream': `${cream}`,
+            'sugar': `${sugar}`};
+
+        orderReady(finishedDrink);
+    }
+
+    const orderReady = (finishedDrink) => {
+        console.log(`your order of ${finishedDrink.Drink} is ready`);
+    }
+
+drinkOrder('Coffee', true, false, orderReady);
+</script>
