@@ -38,13 +38,13 @@ var contacts = [
 // Construct a schema, using GraphQL schema language
 var schema = buildSchema(`
   type Query {
-    contacts: [contact]
+    contacts: [Contact]
   },
   type Contact {
     name: String
     email: String
     age: Int
-    courses: [Courses]
+    courses: [Course]
   },
   type Course {
     number:String
