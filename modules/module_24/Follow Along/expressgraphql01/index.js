@@ -38,6 +38,7 @@ var contacts = [
 // Construct a schema, using GraphQL schema language
 var schema = buildSchema(`
   type Query {
+    contact(id: Int): Contact
     contacts: [Contact]
   },
   type Contact {
@@ -54,6 +55,7 @@ var schema = buildSchema(`
 
 // The root provides a resolver function for each API endpoint
 var root = {
+  contact : (arg)=>contacts[arg.id],
   contacts : ()=> contacts
 };
 
