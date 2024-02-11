@@ -38,7 +38,17 @@ var contacts = [
 // Construct a schema, using GraphQL schema language
 var schema = buildSchema(`
   type Query {
-    hello: String
+    contacts: [contact]
+  },
+  type Contact {
+    name: String
+    email: String
+    age: Int
+    courses: [Courses]
+  },
+  type Course {
+    number:String
+    name: String
   }
 `)
 
