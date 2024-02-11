@@ -59,6 +59,7 @@ var { buildSchema } = require("graphql")
 
 var schema = buildSchema(`
   type Query {
+    restaurant(id: Int): Restaurant
     restaurants: [Restaurant]
   },
   type Restaurant {
@@ -74,6 +75,7 @@ var schema = buildSchema(`
 
 // The root provides a resolver function for each API endpoint
 var root = {
+  restaurant : (arg)=> restaurants[arg.id],
   restaurants : ()=> restaurants
 };
 
