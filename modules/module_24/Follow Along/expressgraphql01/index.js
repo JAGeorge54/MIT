@@ -50,13 +50,47 @@ var schema = buildSchema(`
   type Course {
     number:String
     name: String
+  },
+  input ContactInput{
+    name: String
+    email: String
+    age: Int
+  }
+  type DeleteResponse{
+    ok: Boolean!
+  }
+  type Mutation{
+    setContact(input: ContactInput): Contact
+  
+    deleteContact(id: Int!): DeleteResponse
+    editContact(id: Int!, age: Int!): Contact
   }
 `)
 
 // The root provides a resolver function for each API endpoint
 var root = {
   contact : (arg)=>contacts[arg.id],
-  contacts : ()=> contacts
+  contacts : ()=> contacts,
+  setContact : ({input}) => {
+    contacts.push({name:input.name,email:input.email,age:input.age})
+    return input
+  },
+  deleteContact : ({id})=>{
+    const ok = Boolean(contacts[id])
+    let delc = contacts[id];
+    contacts = contacts.filter(item => item.id !== id)
+    console.log(JSON.stringify(delc)) 
+    return {ok}
+  },
+  editContact: ({id, ...contact}) => {
+    if(!contacts[id]) {
+      throw new Error("contact doesn't exist")
+    }
+    contacts[id] = {
+    ...contacts[id],...contact
+    }
+    return contacts[id]
+  }
 };
 
 var app = express()
