@@ -79,9 +79,9 @@ var schema = buildSchema(`
     ok: Boolean!
   }
   type Mutation{
-    setrestaurant(input: restaurantInput): restaurant
+    setrestaurant(input: restaurantInput): Restaurant
     deleterestaurant(id: Int!): DeleteResponse
-    editrestaurant(id: Int!, name: String!): restaurant
+    editrestaurant(id: Int!, name: String!): Restaurant
   }
 `)
 
