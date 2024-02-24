@@ -3,6 +3,11 @@ const app     = express();
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUI = require('swagger-ui-express');
 
+// data parser - used to parse post data
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 const swaggerOptions = {
     swaggerDefinition: {
         info: {
@@ -35,6 +40,26 @@ app.get('/books', (req, res) => {
         }
     ]);
 });
+
+/**
+ * @swagger
+ * /book:
+ *  post:
+ *      description: get one book
+ *      parameters:
+ *      - name: title
+ *        description: Book title
+ *        in: body
+ *        required: true
+ *        type: string
+ *      responses:
+ *          200:
+ *              description: Success
+ */
+app.post('/book', (req, res) => {
+    const title = req.body.title;
+    res.send({ title });
+})
 
 app.listen(3000, () => {
     console.log('Running on port 3000');
