@@ -11,7 +11,13 @@ function App() {
 
   return (
     <>
-      <h1 >Hello World!</h1>
+      <div className="grid">        
+            <Header  handle={handle} data={data}/>
+            <Left    handle={handle} data={data}/>
+            <Article handle={handle} data={data}/>
+            <Right   handle={handle} data={data}/>
+            <Footer  handle={handle} data={data}/>
+        </div>
     </>
   )
 }
