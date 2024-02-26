@@ -7,3 +7,5 @@ function Left(props) {
         </left>    
     </>);
 }
+
+export default Left
