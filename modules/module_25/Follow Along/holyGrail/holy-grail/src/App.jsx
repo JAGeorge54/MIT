@@ -7,6 +7,7 @@ import left from './components/left'
 import right from './components/right'
 
 function App() {
+  const [data, setData] = useState({header: 0, left: 0, article: 0, right: 0, footer: 0})
 
   return (
     <>
