@@ -5,8 +5,8 @@ var client = redis.createClient();
 const port = 3000;
 
 // init values
-client.mset('header',0,'left',0,'article',0,'right',0,'footer',0);
-client.mget(['header','left','article','right','footer'], 
+client.set('header',0,'left',0,'article',0,'right',0,'footer',0);
+client.get(['header','left','article','right','footer'], 
   function(err, value) {
     console.log(value);
 }); 
