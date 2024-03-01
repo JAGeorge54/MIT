@@ -17,4 +17,41 @@
 
 	// handle on firebase db
 	const db = firebase.database();
+
+    // get elements
+    const message = document.getElementById('message');
+    const write   = document.getElementById('write');
+    const read    = document.getElementById('read');
+    const status  = document.getElementById('status');
+
+    //write
+    write.addEventListener('click', e => {
+        const messages = db.ref('messages');
+
+        //simple id - ok for example, do not use in production
+        const id = (new Date).getTime();
+
+        //write to db
+        messages.child(id).set({'message' : message.value})
+            .then(function() {
+                status.innerHTML = 'wrote to DB!';
+            })
+    });
+
+    //read
+    read.addEventListener('click', e => {
+        status.innerHTML = '';
+        const messages = db.ref('messages');
+
+        messages.once('value')
+            .then(function(dataSnapshot) {
+                let data = dataSnapshot.val();
+                let keys = Object.keys(data);
+
+                keys.forEach(function(key) {
+                    console.log(data[key]);
+                    status.innerHTML += JSON.stringify(data[key]) + '<br>';
+                })
+            })
+    })
 });
