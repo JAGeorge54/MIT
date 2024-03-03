@@ -12,7 +12,7 @@
     };
   
     // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
+    firebase.initializeApp(firebaseConfig);
 
     // Create a root reference
     let storage = firebase.storage();
