@@ -41,7 +41,7 @@
     // TODO: Add the value of currentUserEmail when writing to the database under the field name of "sender"
     messages
       .child(id)
-      .set({ message: message.value })
+      .set({ message: message.value, sender: currentUserEmail })
       .then(function () {
         console.log('Wrote to DB!');
       });
