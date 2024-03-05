@@ -2,12 +2,14 @@
   // TODO: replace this with your own firebase config object after creating app in your firebase console
   // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: 'AIzaSyBkKiHuQKzxaojiI6YWp2DFvPFDMAU2wJ0',
-    authDomain: 'fir-chat-6e6f7.firebaseapp.com',
-    projectId: 'fir-chat-6e6f7',
-    storageBucket: 'fir-chat-6e6f7.appspot.com',
-    messagingSenderId: '118595217119',
-    appId: '1:118595217119:web:cd0f04e2ed218df2aeab6a',
+    apiKey: "AIzaSyBDE4gVWQeNfsguvIy3Qdyr5GnwdMInZnI",
+    authDomain: "courso-10521.firebaseapp.com",
+    databaseURL: "https://courso-10521-default-rtdb.firebaseio.com",
+    projectId: "courso-10521",
+    storageBucket: "courso-10521.appspot.com",
+    messagingSenderId: "709929043728",
+    appId: "1:709929043728:web:ca090b437867c8a1580795",
+    measurementId: "G-4Z2M506R6R"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
@@ -76,7 +78,10 @@
   }
 
   // TODO: in this function you should set the userNameDisplay.innerHTML to the passed in userEmail as well as updating the currentUserEmail variable to that same value
-  function updateCurrentUser(userEmail) {}
+  function updateCurrentUser(userEmail) {
+    updateCurrentUser = userEmail;
+    userNameDisplay.innerHTML = userEmail;
+  }
 
   // login
   login.addEventListener('click', (e) => {
