@@ -79,7 +79,7 @@
 
   // TODO: in this function you should set the userNameDisplay.innerHTML to the passed in userEmail as well as updating the currentUserEmail variable to that same value
   function updateCurrentUser(userEmail) {
-    updateCurrentUser = userEmail;
+    currentUserEmail = userEmail;
     userNameDisplay.innerHTML = userEmail;
   }
 
