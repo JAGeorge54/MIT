@@ -30,3 +30,6 @@ ui.navigation = `
         </div>
     </nav>
 `;
+
+let navigation = document.getElementById('navigation');
+navigation.innerHTML += ui.navigation;
