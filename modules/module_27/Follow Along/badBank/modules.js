@@ -12,19 +12,19 @@ ui.navigation = `
                     <a class="nav-link" href="#createAccount" onclick="loadCreateAccount()" id="createAccount">Create Account</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="loadLogin()" id="login>Login</a>
+                    <a class="nav-link" href="#" onclick="loadLogin()" id="login">Login</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#" onclick="loadDeposit()" id="login>Deposit</a>
+                <a class="nav-link" href="#" onclick="loadDeposit()" id="deposit">Deposit</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#" onclick="loadWithdraw()" id="login>Withdraw</a>
+                <a class="nav-link" href="#" onclick="loadWithdraw()" id="withdraw">Withdraw</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="loadBalance()" id="login>Balance</a>
+                    <a class="nav-link" href="#" onclick="loadBalance()" id="balance">Balance</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="loadAllData()" id="login>AllData</a>
+                    <a class="nav-link" href="#" onclick="loadAllData()" id="alldata">AllData</a>
                 </li>
             </ul>
         </div>
