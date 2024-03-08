@@ -51,10 +51,10 @@ ui.createAccount = `
 `;
 
 ui.login = `
-<div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
     <div class="card-header">Login</div>
     <div class="card-body">
-        Email address<br>
+        Email<br>
         <input type="input" class="form-control" id="email" placeholder="Enter email"><br>
         Password<br>
         <input type="password" class="form-control" id="password" placeholder="Enter password"><br>
