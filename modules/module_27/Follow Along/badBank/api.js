@@ -18,8 +18,8 @@ function create() {
     ctx.accounts.push({
         name: name.value,
         email: email.value,
-        password: password.value,
-        balance: 0
+        balance: 0,
+        password: password.value
     })
 
     // update status & clear form
