@@ -67,8 +67,6 @@ function deposit() {
     function addDeposit() {
         ctx.accounts.map((account, i) => {
             if (account.email === email.value) {
-                console.log(ctx.accounts[i].balance);
-                console.log(amount.value);
                 ctx.accounts[i].balance += Number(amount.value);
                 email.value = '';
                 amount.value = '';
