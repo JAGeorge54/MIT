@@ -79,3 +79,19 @@ function deposit() {
 
     addDeposit();
 };
+
+function withdraw() {
+    const email = document.getElementById('withdrawEmail');
+    const amount = document.getElementById('withdrawAmount');
+    const status = document.getElementById('withdrawStatus');
+
+    ctx.accounts.map((account, i) => {
+        if (account.email === email.value) {
+            ctx.accounts[i].balance -= Number(amount.value);
+            email.value = '';
+            amount.value = '';
+            status.innerHTML = 'Withdraw Successful';
+        } else status.innerHTML = 'Email does not match';
+    });
+
+};
