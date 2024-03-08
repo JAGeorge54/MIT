@@ -10,3 +10,9 @@ const ctx = {
     ]
 };
 
+function create() {
+    const name = document.getElementById('name');
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+    const status = document.getElementById('createStatus');
+}
