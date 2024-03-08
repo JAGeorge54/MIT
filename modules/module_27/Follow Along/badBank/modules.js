@@ -91,3 +91,15 @@ ui.withdraw = `
     </div>
 </div>
 `;
+
+ui.balance = `
+<div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+    <div class="card-header">Balance</div>
+    <div class="card-body">
+        Email<br>
+        <input type="input" class="form-control" id="depositEmail" placeholder="Enter email"><br>
+        <button type="submit" class="btn" onclick="balance()">Show Balance</button>
+        <div id="balanceStatus"></div>
+    </div>
+</div>
+`;
