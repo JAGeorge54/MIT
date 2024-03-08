@@ -120,3 +120,31 @@ ui.allData = `
     <button type="button" class="btn-secondary" onclick="allData()">Show All Data</button>
     <div id="allDataStatus"></div>
 `;
+
+let loadCreateAccount = function() {
+    target.innerHTML = ui.createAccount;
+};
+
+let loadLogin = function() {
+    target.innerHTML = ui.login;
+};
+
+let loadDeposit = function() {
+    target.innerHTML = ui.deposit;
+};
+
+let loadWithdraw = function() {
+    target.innerHTML = ui.withdraw;
+};
+
+let loadBalance = function() {
+    target.innerHTML = ui.balance;
+};
+
+let defaultModule = function() {
+    target.innerHTML = ui.default;
+};
+
+let loadAllData = function() {
+    target.innerHTML = ui.allData;
+};
