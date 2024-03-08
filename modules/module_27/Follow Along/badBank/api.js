@@ -58,3 +58,24 @@ function login() {
 
     findUser();
 };
+
+function deposit() {
+    const email = document.getElementById('depositEmail');
+    const amount = document.getElementById('depositAmount');
+    const status = document.getElementById('depositStatus');
+
+    function addDeposit() {
+        ctx.accounts.map((account, i) => {
+            if (account.email === email.value) {
+                console.log(ctx.accounts[i].balance);
+                console.log(amount.value);
+                ctx.accounts[i].balance += Number(amount.value);
+                email.value = '';
+                amount.value = '';
+                status.innerHTML = 'Deposit Successful';
+            } else status.innerHTML = 'Email does not match';
+        });
+    };
+
+    addDeposit();
+};
