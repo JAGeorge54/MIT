@@ -148,3 +148,5 @@ let defaultModule = function() {
 let loadAllData = function() {
     target.innerHTML = ui.allData;
 };
+
+defaultModule();
