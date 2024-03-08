@@ -49,3 +49,17 @@ ui.createAccount = `
     </div>
 </div>
 `;
+
+ui.login = `
+<div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+    <div class="card-header">Login</div>
+    <div class="card-body">
+        Email address<br>
+        <input type="input" class="form-control" id="email" placeholder="Enter email"><br>
+        Password<br>
+        <input type="password" class="form-control" id="password" placeholder="Enter password"><br>
+        <button type="submit" id="submit" class="btn" onclick="login()">Login</button>
+        <div id="loginStatus"></div>
+    </div>
+</div>
+`;
