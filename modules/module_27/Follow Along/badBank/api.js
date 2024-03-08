@@ -93,3 +93,20 @@ function withdraw() {
     });
 
 };
+
+function balance() {
+    const email = document.getElementById('balanceEmail');
+    const status = document.getElementById('balanceStatus');
+
+    ctx.accounts.map((account, i) => {
+        if (account.email === email.value) {
+            let balance = ctx.accounts[i].balance;
+            status.innerHTML = `Your current balance is : ${balance}`;
+            setTimeout(() => {
+                email.value = '';
+                status.innerHTML = '';
+            }
+            , 2000)
+        } else status.balance = 'Email does not match';
+    })
+};
