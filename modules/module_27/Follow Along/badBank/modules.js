@@ -63,3 +63,17 @@ ui.login = `
     </div>
 </div>
 `;
+
+ui.deposit = `
+<div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+    <div class="card-header">Deposit</div>
+    <div class="card-body">
+        Email<br>
+        <input type="input" class="form-control" id="depositEmail" placeholder="Enter email"><br>
+        Amount<br>
+        <input type="number" class="form-control" id="depositAmount" placeholder="Enter amount"><br>
+        <button type="submit" class="btn" onclick="deposit()">Deposit</button>
+        <div id="depositStatus"></div>
+    </div>
+</div>
+`;
