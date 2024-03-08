@@ -114,3 +114,9 @@ ui.default = `
     </div>
 </div>
 `;
+
+ui.allData = `
+    <h5>All Data in Store</h5>
+    <button type="button" class="btn-secondary" onclick="allData()">Show All Data</button>
+    <div id="allDataStatus"></div>
+`;
