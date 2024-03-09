@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
 import { ContextProvider } from './context'
 import Home from './components/home'
@@ -12,9 +14,10 @@ function App() {
   return (
     <>
       <NavBar/>
-      <Home/>
-      <AllData/>
-      <CreateAccount/>
+      <Routes>
+        <Route path='/' element={ <Home/> } />
+        <Route path='/createaccount' element={ <CreateAccount/> } />
+      </Routes>
     </>
   )
 }
