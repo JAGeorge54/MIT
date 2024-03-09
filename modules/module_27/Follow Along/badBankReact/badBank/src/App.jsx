@@ -11,23 +11,26 @@ import Balance       from './components/balance'
 import Deposit       from './components/deposit'
 import Withdraw      from './components/withdraw'
 import Logout        from './components/logout'
+import UserContext from './context/users';
 
 function App() {
   
 
   return (
     <>
-      <NavBar/>
-      <Routes>
-        <Route path='/' element={ <Home/> } />
-        <Route path='/createaccount' element={ <CreateAccount/> } />
-        <Route path='/login' element={ <Login/> } />
-        <Route path='/balance' element={ <Balance/> } />
-        <Route path='/deposit' element={ <Deposit/> } />
-        <Route path='/withdraw' element={ <Withdraw/> } />
-        <Route path='/logout' element={ <Logout/> } />
-        <Route path='/alldata' element={ <AllData/> } />
-      </Routes>
+      <UserContext.Provider value={{accounts: []}}>
+        <NavBar/>
+        <Routes>
+          <Route path='/' element={ <Home/> } />
+          <Route path='/createaccount' element={ <CreateAccount/> } />
+          <Route path='/login' element={ <Login/> } />
+          <Route path='/balance' element={ <Balance/> } />
+          <Route path='/deposit' element={ <Deposit/> } />
+          <Route path='/withdraw' element={ <Withdraw/> } />
+          <Route path='/logout' element={ <Logout/> } />
+          <Route path='/alldata' element={ <AllData/> } />
+        </Routes>
+      </UserContext.Provider>
     </>
   )
 }
