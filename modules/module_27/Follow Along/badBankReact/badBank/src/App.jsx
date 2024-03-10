@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import UserContextProvider from './context/UserContextProvider'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route } from 'react-router-dom'
 import './App.css'
@@ -17,6 +18,7 @@ function App() {
 
   return (
     <>
+      <UserContextProvider>
         <NavBar/>
         <Routes>
           <Route path='/' element={ <Home/> } />
@@ -28,6 +30,7 @@ function App() {
           <Route path='/logout' element={ <Logout/> } />
           <Route path='/alldata' element={ <AllData/> } />
         </Routes>
+      </UserContextProvider>
     </>
   )
 }
