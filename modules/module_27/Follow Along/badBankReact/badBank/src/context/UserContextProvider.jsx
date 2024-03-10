@@ -3,18 +3,16 @@ import React, { useState } from 'react'
 import UserContext from './UserContext'
 
 const UserContextProvider = ({children}) => {
-    const [user, setUser] = useState([{accounts: [
+    const [users, setUsers] = useState([
         {
             'name': 'peter',
             'email': 'peter@mit.edu',
             'password': 'secret',
             'balance': 100
         }
-    ]}, 
-        {'loggedin': false}
     ]);
     return (
-        <UserContext.Provider value={{user, setUser}}>
+        <UserContext.Provider value={{users, setUsers}}>
             {children}
         </UserContext.Provider>
     );

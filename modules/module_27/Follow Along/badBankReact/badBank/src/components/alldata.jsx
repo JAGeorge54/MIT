@@ -4,14 +4,14 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 
 function AllData() {
-    const {user} = useContext(UserContext);
+    const {users} = useContext(UserContext);
     let name = '';
     let email = '';
     let password = '';
     let balance = '';
 
     function Users () {
-        user[0].accounts.map(account => {
+        users.map(account => {
             name = account.name;
             email = account.email;
             password = account.password;
