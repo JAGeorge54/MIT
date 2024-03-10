@@ -1,15 +1,31 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import UserContext from '../context/UserContext';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 function AllData() {
-    const {user} = useContext(UserContext);
+    const {user, setUser} = useContext(UserContext);
+    let name = '';
+    let email = '';
+    let password = '';
+    let balance = '';
 
     function Users () {
-        let users = user[0].accounts.map((account, i) => {
-            return <p>{JSON.stringify(account)}</p>
+        user[0].accounts.map(account => {
+            name = account.name;
+            email = account.email;
+            password = account.password;
+            balance = account.balance;
         })
         return (
-            <p>{users}</p>
+            <Card style={{ width: '18rem' }}>
+                <Card.Header>{name}</Card.Header>
+                <ListGroup variant="flush">
+                    <ListGroup.Item>{email}</ListGroup.Item>
+                    <ListGroup.Item>{password}</ListGroup.Item>
+                    <ListGroup.Item>{balance}</ListGroup.Item>
+                </ListGroup>
+            </Card>
         )
     }
         
