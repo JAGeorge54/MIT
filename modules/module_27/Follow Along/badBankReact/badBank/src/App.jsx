@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import UserContextProvider from './context/UserContextProvider'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route } from 'react-router-dom'
 import './App.css'
@@ -11,14 +12,13 @@ import Balance       from './components/balance'
 import Deposit       from './components/deposit'
 import Withdraw      from './components/withdraw'
 import Logout        from './components/logout'
-import UserContext from './context/users';
 
 function App() {
   
 
   return (
     <>
-      <UserContext.Provider value={{accounts: []}}>
+      <UserContextProvider>
         <NavBar/>
         <Routes>
           <Route path='/' element={ <Home/> } />
@@ -30,7 +30,7 @@ function App() {
           <Route path='/logout' element={ <Logout/> } />
           <Route path='/alldata' element={ <AllData/> } />
         </Routes>
-      </UserContext.Provider>
+      </UserContextProvider>
     </>
   )
 }
