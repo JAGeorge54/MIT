@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 
 function AllData() {
-    const {user, setUser} = useContext(UserContext);
+    const {user} = useContext(UserContext);
     let name = '';
     let email = '';
     let password = '';
