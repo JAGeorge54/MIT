@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import UserContext from '../context/UserContext';
 
 function AllData() {
-    const {user, setUser} = useContext(UserContext);
+    const {user} = useContext(UserContext);
 
     function Users () {
         let users = user[0].accounts.map((account, i) => {
