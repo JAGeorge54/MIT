@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import './createAccount.css'
 
 function CreateAccount() {
-    
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     return(
         <div id='card' className="d-flex justify-content-center col text-center">
