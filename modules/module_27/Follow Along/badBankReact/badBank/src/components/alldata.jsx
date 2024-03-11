@@ -11,28 +11,29 @@ function AllData() {
     let balance = '';
 
     function Users () {
-        users.map(account => {
+       let card = users.map(account => {
             name = account.name;
             email = account.email;
             password = account.password;
             balance = account.balance;
+            return (
+                <Card style={{ width: '18rem' }}>
+                    <Card.Header>{name}</Card.Header>
+                    <ListGroup variant="flush">
+                        <ListGroup.Item>{email}</ListGroup.Item>
+                        <ListGroup.Item>{password}</ListGroup.Item>
+                        <ListGroup.Item>{balance}</ListGroup.Item>
+                    </ListGroup>
+                </Card>
+            )
         })
-        return (
-            <Card style={{ width: '18rem' }}>
-                <Card.Header>{name}</Card.Header>
-                <ListGroup variant="flush">
-                    <ListGroup.Item>{email}</ListGroup.Item>
-                    <ListGroup.Item>{password}</ListGroup.Item>
-                    <ListGroup.Item>{balance}</ListGroup.Item>
-                </ListGroup>
-            </Card>
-        )
+        return card;
     }
         
 
     return(
         <>
-            <h1>alldata</h1>
+            <h1>Users</h1>
             <Users/>
         </>
     )
