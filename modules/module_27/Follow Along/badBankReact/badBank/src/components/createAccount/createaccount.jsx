@@ -12,6 +12,7 @@ function CreateAccount() {
 
     const handleSubmit = (event) => {
         setUsers([...users, {name, email, password, "balance": 100}])
+        //figure out how to clear form badbankstandalone/creataccount
         let nameReset = document.getElementById('name');
         nameReset = '';
     }
