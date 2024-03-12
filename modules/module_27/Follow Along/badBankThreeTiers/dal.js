@@ -1,27 +1,78 @@
-const { MongoClient } = require('mongodb');
-// or as an es module:
-// import { MongoClient } from 'mongodb'
+const MongoClient = require('mongodb').MongoClient;
+const url         = 'mongodb://localhost:27017';
+let db            = null;
+ 
+// connect to mongo
+MongoClient.connect(url, {useUnifiedTopology: true}, function(err, client) {
+    console.log("Connected successfully to db server");
 
-// Connection URL
-const url = 'mongodb://localhost:27017';
-const client = new MongoClient(url);
+    // connect to myproject database
+    db = client.db('myproject');
+});
 
-// Database Name
-const dbName = 'myProject';
-
-async function main() {
-  // Use connect method to connect to the server
-  await client.connect();
-  console.log('Connected successfully to server');
-  const db = client.db(dbName);
-  const collection = db.collection('documents');
-
-  // the following code examples can be pasted here...
-
-  return 'done.';
+// create user account
+function create(name, email, password){
+    return new Promise((resolve, reject) => {    
+        const collection = db.collection('users');
+        const doc = {name, email, password, balance: 0};
+        collection.insertOne(doc, {w:1}, function(err, result) {
+            err ? reject(err) : resolve(doc);
+        });    
+    })
 }
 
-main()
-  .then(console.log)
-  .catch(console.error)
-  .finally(() => client.close());
+// find user account
+function find(email){
+    return new Promise((resolve, reject) => {    
+        const customers = db
+            .collection('users')
+            .find({email: email})
+            .toArray(function(err, docs) {
+                err ? reject(err) : resolve(docs);
+        });    
+    })
+}
+
+// find user account
+function findOne(email){
+    return new Promise((resolve, reject) => {    
+        const customers = db
+            .collection('users')
+            .findOne({email: email})
+            .then((doc) => resolve(doc))
+            .catch((err) => reject(err));    
+    })
+}
+
+// update - deposit/withdraw amount
+function update(email, amount){
+    return new Promise((resolve, reject) => {    
+        const customers = db
+            .collection('users')            
+            .findOneAndUpdate(
+                {email: email},
+                { $inc: { balance: amount}},
+                { returnOriginal: false },
+                function (err, documents) {
+                    err ? reject(err) : resolve(documents);
+                }
+            );            
+
+
+    });    
+}
+
+// all users
+function all(){
+    return new Promise((resolve, reject) => {    
+        const customers = db
+            .collection('users')
+            .find({})
+            .toArray(function(err, docs) {
+                err ? reject(err) : resolve(docs);
+        });    
+    })
+}
+
+
+module.exports = {create, findOne, find, update, all};
