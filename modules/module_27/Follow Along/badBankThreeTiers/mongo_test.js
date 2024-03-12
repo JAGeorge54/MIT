@@ -7,4 +7,8 @@ MongoClient.connect(url, {useUnifiedTopology: true}, function(err, client) {
     //database name
     const dbName = 'myproject';
     const db = client.db(dbName);
+
+    // new user
+    var name = 'user' + Math.floor(Math.random()*10000);
+    var email = name + '@mit.edu';
 });
