@@ -7,7 +7,9 @@ const app = express();
 //Init middleware
 // app.use(logger);
 
-
+// Body Parser Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: false}));
 
 //hard way to access files in public
 // app.get('/', (req, res) => {
