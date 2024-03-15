@@ -8,7 +8,7 @@ const logger = (req, res, next) => {
     console.log('Hello!');
     next();
 };
-
+//Init middleware
 app.use(logger);
 
 //Gets all Members
