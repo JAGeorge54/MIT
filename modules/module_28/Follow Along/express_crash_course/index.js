@@ -4,11 +4,15 @@ const members = require('./Members')
 
 const app = express();
 
+const logger = (req, res, next) => {
+    console.log('Hello!');
+    next();
+};
+
+app.use(logger);
+
 //Gets all Members
 app.get('/api/members', (req, res) => res.json(members));
-
-
-
 
 //hard way to access files in public
 // app.get('/', (req, res) => {
