@@ -1,4 +1,5 @@
 const Author = require("../models/author");
+const Book = require("../models/book");
 const asyncHandler = require("express-async-handler");
 
 // Display list of all Authors.
