@@ -42,7 +42,11 @@ app.get('/posts/:title/:id/:published', function(req, res){
 // ----------------------------------------------------
 app.get('/published/:boolean', function(req, res){
 
-    // YOUR CODE
+    const boolean = req.params.boolean;
+
+    const filtered = db.get('posts').filter({ published: boolean }).value()
+    console.log(filtered);
+    res.send(filtered)
 
 });
 
@@ -52,7 +56,22 @@ app.get('/published/:boolean', function(req, res){
 // ----------------------------------------------------
 app.get('/published/:id/:boolean', function(req, res){
 
-    // YOUR CODE
+    const change = {
+        "id": req.params.id,
+        "boolean": req.params.boolean
+    }
+
+    console.log(db.get('posts').find({ id: change.id}).value())
+
+    db.get('posts')
+        .find({ id: change.id})
+        .assign({ published: change.boolean})
+        .write()
+    
+    console.log(db.get('posts').find({ id: change.id}).value())
+    res.send(db.get('posts').find({ id: change.id}).value())
+
+
 
 });
 
@@ -62,8 +81,17 @@ app.get('/published/:id/:boolean', function(req, res){
 // ----------------------------------------------------
 app.get('/delete/:id/', function(req, res){
 
-    // YOUR CODE
+    const newId = req.params.id;
 
+    console.log(db.get('posts').value())
+    const deleted = db.get('posts').filter({ id: newId }).value()
+    db.get('posts')
+        .remove({ id: newId})
+        .write()
+
+        console.log(db.get('posts').value())
+        res.send(db.get('posts').value())
+        console.log(`${deleted} has been deleted`)
 });
 
 // start server
