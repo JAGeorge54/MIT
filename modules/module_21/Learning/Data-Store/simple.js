@@ -7,7 +7,12 @@ var db      = low(adapter);
 // ---------------------------
 db.defaults({ posts: []}).write();
  
-console.log(db.get('posts').value());
+// console.log(db.get('posts').value());
+
+// Add a post
+db.get('posts')
+  .push({ id: 1, title: 'lowdb is awesome', published: true})
+  .write()
 
 // count posts
 // ----------------------------
