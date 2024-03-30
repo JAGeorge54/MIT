@@ -31,14 +31,14 @@
       "published": "true"
     },
     {
-      "id": "[object HTMLInputElement]",
-      "title": "post from the web",
-      "published": "false"
-    },
-    {
       "id": "12",
       "title": "hello world",
       "published": "true"
+    },
+    {
+      "id": "1",
+      "title": "hello world!",
+      "published": "false"
     }
   ]
 }
