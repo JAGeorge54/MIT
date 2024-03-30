@@ -1,7 +1,8 @@
 const mongodb = require("mongodb");
+require('dotenv').config()
 
 
-const connectionURL = "mongodb+srv://root:asdfasdf@badbank.3o9zmts.mongodb.net/?retryWrites=true&w=majority&appName=badbank"
+const connectionURL = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PWD}@badbank.3o9zmts.mongodb.net/?retryWrites=true&w=majority&appName=badbank`
 const dbName = "myproject"
 
 //get MongoClient
