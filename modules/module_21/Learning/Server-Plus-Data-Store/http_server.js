@@ -12,6 +12,8 @@ app.use(express.static('public'));
 // init the data store
 db.defaults({ posts: []}).write();
 
+db.get('posts')
+
 // list posts
 app.get('/data', function(req, res){     
 
