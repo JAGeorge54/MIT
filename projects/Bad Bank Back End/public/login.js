@@ -26,6 +26,7 @@ function LoginMsg(props){
 }
 
 function LoginForm(props){
+  const ctx = React.useContext(UserContext);
   const [email, setEmail]       = React.useState('');
   const [password, setPassword] = React.useState('');
 
@@ -38,6 +39,7 @@ function LoginForm(props){
             props.setStatus('');
             props.setShow(false);
             console.log('JSON:', data);
+            ctx[3].setlogIn(true)
         } catch(err) {
             props.setStatus(text)
             console.log('err:', text);
@@ -45,24 +47,33 @@ function LoginForm(props){
     });
   }
 
+  // function handleGoogle(e) {
+  
+  //   const provider = new GoogleAuthProvider();
+  //   return signInWithPopup(auth, provider)
+          
+
+  // };
+
 
   return (<>
+    <div>
+      Email<br/>
+      <input type="input" 
+        className="form-control" 
+        placeholder="Enter email" 
+        value={email} 
+        onChange={e => setEmail(e.currentTarget.value)}/><br/>
 
-    Email<br/>
-    <input type="input" 
-      className="form-control" 
-      placeholder="Enter email" 
-      value={email} 
-      onChange={e => setEmail(e.currentTarget.value)}/><br/>
+      Password<br/>
+      <input type="password" 
+        className="form-control" 
+        placeholder="Enter password" 
+        value={password} 
+        onChange={e => setPassword(e.currentTarget.value)}/><br/>
 
-    Password<br/>
-    <input type="password" 
-      className="form-control" 
-      placeholder="Enter password" 
-      value={password} 
-      onChange={e => setPassword(e.currentTarget.value)}/><br/>
-
-    <button type="submit" className="btn btn-light" onClick={handle}>Login</button>
-   
+      <button type="submit" className="btn btn-light" onClick={handle}>Login</button>
+      {/* <button type="submit" className="btn btn-light" onClick={handleGoogle}>Login with Google</button> */}
+    </div>
   </>);
 }
